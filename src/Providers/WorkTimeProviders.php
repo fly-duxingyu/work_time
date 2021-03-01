@@ -5,6 +5,7 @@ namespace Duxingyu\WorkTime\Providers;
 
 
 use Duxingyu\WorkTime\Eloquent\WorkEndTimeCalculate;
+use Duxingyu\WorkTime\Eloquent\WorkRestConfigEloquent;
 use Duxingyu\WorkTime\Test\WorkConfig;
 use Illuminate\Support\ServiceProvider;
 
@@ -35,9 +36,10 @@ class WorkTimeProviders extends ServiceProvider
      */
     public function register()
     {
+        // FileSystem.
         // 注册;
         $this->app->bind('WorkEndTimeCalculate', function ($app) {
-            return new WorkEndTimeCalculate($app);
+            return new WorkEndTimeCalculate(WorkRestConfigEloquent::class);
         });
 
     }
