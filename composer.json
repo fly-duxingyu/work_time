@@ -1,0 +1,38 @@
+{
+    "name": "duxingyu/work_time",
+    "description": "aes",
+    "type": "lib",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "robert vivi",
+            "email": "530606930@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Duxingyu\\WorkTime\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Duxingyu\\WorkTime\\Test\\": "test/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Duxingyu\\WorkTime\\Providers\\WorkTimeProviders"
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
