@@ -36,10 +36,9 @@ class WorkTimeProviders extends ServiceProvider
      */
     public function register()
     {
-        // FileSystem.
         // 注册;
         $this->app->bind('WorkEndTimeCalculate', function ($app) {
-            return new WorkEndTimeCalculate(WorkRestConfigEloquent::class);
+            return new WorkEndTimeCalculate('Duxingyu\WorkTime\Eloquent\WorkRestConfigEloquent');
         });
 
     }

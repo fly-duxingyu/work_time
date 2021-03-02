@@ -6,7 +6,7 @@ use Duxingyu\WorkTime\Contracts\WorkIsDoneInterface;
 use Duxingyu\WorkTime\Contracts\WorkStartInterface;
 use Exception;
 
-class WorkRestConfigEloquent implements WorkIsDoneInterface, WorkStartInterface
+abstract class WorkRestConfigEloquent implements WorkIsDoneInterface, WorkStartInterface
 {
     protected $startTime;//任务开始时间
     protected $taskTime; //任务完成时间秒
@@ -70,9 +70,7 @@ class WorkRestConfigEloquent implements WorkIsDoneInterface, WorkStartInterface
      *      ]
      * ]
      */
-     public function setWorkTime(){
-
-     }
+    abstract public function setWorkTime();
 
     /**
      * 设置休息时间
@@ -81,17 +79,6 @@ class WorkRestConfigEloquent implements WorkIsDoneInterface, WorkStartInterface
      *      '0101'=>1,//日期
      * ]
      */
-     public function setRestTime(){
+    abstract public function setRestTime();
 
-     }
-
-    public function setTaskTime()
-    {
-        // TODO: Implement setTaskTime() method.
-    }
-
-    public function setStartTime()
-    {
-        // TODO: Implement setStartTime() method.
-    }
 }
